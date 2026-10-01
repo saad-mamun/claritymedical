@@ -212,21 +212,18 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
 .contact-section { padding: 120px 0 125px; background: linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%); }
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 110px; align-items: center; }
 .contact-copy > h2 { margin-bottom: 40px; }
+.contact-intro { max-width: 370px; margin: -16px 0 34px; color: #aac4bd; font-size: 14px; }
 .contact-list > div { display: flex; gap: 15px; margin-top: 20px; }
 .contact-icon { color: var(--coral); font-size: 22px; line-height: 1.1; }
 .contact-list p { margin: 0; color: #aac4bd; font-size: 12px; line-height: 1.65; }
 .contact-list strong { color: var(--white); font-size: 12px; }
 .contact-list a { color: #aac4bd; border-bottom: 1px solid rgba(255,255,255,.2); }
-.map-placeholder { position: relative; height: 375px; overflow: hidden; border: 1px solid rgba(255,255,255,.15); background: #234746; }
-.map-grid { position: absolute; inset: -30%; opacity: .3; background-image: linear-gradient(30deg, transparent 47%, #8ab3a6 48%, #8ab3a6 49%, transparent 50%), linear-gradient(110deg, transparent 47%, #8ab3a6 48%, #8ab3a6 49%, transparent 50%), linear-gradient(0deg, transparent 49%, #6c9990 50%, transparent 51%); background-size: 95px 75px, 130px 100px, 45px 45px; transform: rotate(-12deg); }
-.map-route { position: absolute; left: 15%; top: 58%; width: 72%; height: 35%; border-top: 2px solid rgba(231,140,105,.65); border-radius: 50%; transform: rotate(-12deg); }
-.map-pin { position: absolute; top: 43%; left: 55%; display: grid; width: 45px; height: 45px; place-items: center; border: 7px solid rgba(231,140,105,.25); border-radius: 50%; background: var(--coral); color: var(--white); font-size: 23px; box-shadow: 0 0 0 1px rgba(255,255,255,.3); }
-.map-label { position: absolute; bottom: 19px; left: 19px; padding: 12px 15px; background: rgba(14, 40, 39, .88); }
-.map-label strong, .map-label span { display: block; }
-.map-label strong { font-size: 11px; }
-.map-label span { color: #9ab9b0; font-size: 10px; }
+.map-frame { position: relative; height: 345px; overflow: hidden; border: 1px solid rgba(255,255,255,.2); background: #dce9e5; box-shadow: 0 22px 50px rgba(0,0,0,.2); }
+.map-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.map-directions { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 14px; padding: 11px 15px; background: var(--paper); color: var(--ink); font-size: 11px; font-weight: 700; box-shadow: 0 5px 18px rgba(13,35,48,.18); }
+.map-directions span { color: var(--coral-deep); font-size: 15px; }
 .contact-side { display: grid; gap: 18px; }
-.contact-form { padding: 24px 27px 27px; background: var(--paper); color: var(--ink); }
+.contact-form { padding: 27px 30px 25px; border-top: 3px solid var(--coral); background: var(--paper); color: var(--ink); }
 .contact-form-title { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin-bottom: 17px; }
 .contact-form-title h3 { margin: 0; font-size: 18px; letter-spacing: -.5px; }
 .contact-form-title span { color: var(--muted); font-size: 9px; }
@@ -388,7 +385,7 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
   .testimonial-track { min-height: 390px; }
   .carousel-controls { margin-top: 25px; }
   .contact-grid { gap: 50px; }
-  .map-placeholder { height: 300px; }
+  .map-frame { height: 300px; }
   .contact-form-fields { grid-template-columns: 1fr; }
   .contact-form-title { display: block; }
   .contact-form-title span { display: block; margin-top: 4px; }
