@@ -97,6 +97,12 @@ h1 em, h2 em { color: var(--teal); font-family: var(--serif); font-style: normal
 .stat { display: flex; flex-direction: column; gap: 4px; border-left: 1px solid var(--line); padding-left: 20px; }
 .stat strong { color: var(--teal); font-family: var(--serif); font-size: 43px; font-weight: 500; letter-spacing: -2px; line-height: 1; }
 .stat span { color: var(--muted); font-size: 12px; }
+.about-marquee { overflow: hidden; margin-top: 88px; border-block: 1px solid var(--line); background: var(--mint-pale); }
+.about-marquee-track { display: flex; width: max-content; animation: about-marquee-scroll 32s linear infinite; }
+.about-marquee:hover .about-marquee-track { animation-play-state: paused; }
+.about-marquee-group { display: flex; flex: 0 0 auto; align-items: center; gap: clamp(24px, 4vw, 58px); padding: 19px clamp(24px, 4vw, 58px); color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; white-space: nowrap; }
+.about-marquee-star { color: var(--coral); font-size: 17px; }
+@keyframes about-marquee-scroll { to { transform: translateX(-50%); } }
 
 .services-section { background: linear-gradient(180deg, var(--mint-pale) 0%, #edf9f5 100%); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 50px; margin-bottom: 60px; }
@@ -156,6 +162,23 @@ h1 em, h2 em { color: var(--teal); font-family: var(--serif); font-style: normal
 .doctor-card div > span { color: var(--muted); font-size: 11px; }
 .doctor-card a { display: flex; justify-content: space-between; margin-top: 18px; padding-top: 13px; border-top: 1px solid var(--line); font-size: 11px; font-weight: 700; }
 .doctor-card a span { color: var(--coral); font-size: 16px; }
+
+.doctor-profile-hero { overflow: hidden; padding: 70px 0 95px; background: linear-gradient(180deg, var(--sand), #f4f9f8); }
+.doctor-profile-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 95px; }
+.doctor-profile-photo { position: relative; max-width: 440px; }
+.doctor-profile-photo img { width: 100%; height: 540px; object-fit: cover; object-position: top; border-radius: 0 80px 0 0; filter: saturate(.78); box-shadow: var(--shadow); }
+.doctor-profile-experience { position: absolute; right: -28px; bottom: 28px; display: flex; align-items: center; gap: 9px; padding: 16px 21px; background: var(--coral); color: var(--white); box-shadow: var(--shadow); }
+.doctor-profile-experience strong { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1; }
+.doctor-profile-experience span { max-width: 80px; font-size: 9px; font-weight: 700; line-height: 1.3; text-transform: uppercase; }
+.doctor-profile-copy .back-link { margin-bottom: 38px; }
+.doctor-profile-copy h1 { margin-bottom: 16px; font-size: clamp(48px, 6vw, 72px); }
+.doctor-profile-role { margin-bottom: 20px; color: var(--teal); font-size: 15px; font-weight: 700; }
+.doctor-profile-copy > p:not(.eyebrow):not(.doctor-profile-role) { max-width: 480px; color: var(--muted); font-size: 15px; }
+.doctor-profile-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 30px; }
+.doctor-profile-intro { padding: 70px 0; background: var(--paper); }
+.doctor-profile-intro-inner { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; align-items: start; }
+.doctor-profile-intro h2 { margin-bottom: 0; font-size: clamp(34px, 4vw, 48px); }
+.doctor-profile-intro p:last-child { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: 15px; }
 
 .appointment-section { padding: 125px 0; background: linear-gradient(135deg, var(--teal-dark) 0%, var(--ink-deep) 100%); }
 .appointment-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 95px; align-items: start; }
@@ -327,6 +350,8 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
   .footer-grid { gap: 30px; }
   .service-hero-inner, .detail-grid { gap: 55px; }
   .service-overview-grid, .service-faq-grid { gap: 60px; }
+  .doctor-profile-grid { gap: 60px; }
+  .doctor-profile-intro-inner { gap: 45px; }
 }
 
 @media (max-width: 700px) {
@@ -364,6 +389,7 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 23px 12px; margin-top: 75px; }
   .stat { padding-left: 12px; }
   .stat strong { font-size: 35px; }
+  .about-marquee { margin-top: 65px; }
   .section-heading { display: block; margin-bottom: 43px; }
   .heading-note { margin-top: 20px; }
   .service-grid, .doctor-grid { grid-template-columns: 1fr; }
@@ -395,9 +421,18 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
   .footer-bottom span { display: block; }
   .service-hero { padding-top: 45px; }
   .service-hero-inner, .service-overview-grid, .detail-grid, .service-faq-grid, .service-cta-inner { grid-template-columns: 1fr; }
+  .doctor-profile-grid, .doctor-profile-intro-inner { grid-template-columns: 1fr; }
   .back-link { margin-bottom: 42px; }
   .service-hero-art { min-height: 380px; order: -1; }
   .service-hero-art img { width: 90%; height: 350px; }
+  .doctor-profile-hero { padding: 45px 0 70px; }
+  .doctor-profile-grid { gap: 45px; }
+  .doctor-profile-photo { width: calc(100% - 15px); }
+  .doctor-profile-photo img { height: 420px; }
+  .doctor-profile-experience { right: -15px; }
+  .doctor-profile-copy .back-link { margin-bottom: 35px; }
+  .doctor-profile-intro { padding: 60px 0; }
+  .doctor-profile-intro-inner { gap: 25px; }
   .service-badge { bottom: 5px; }
   .scan-compare { grid-template-columns: 1fr; }
   .service-detail-section { padding: 83px 0; }
@@ -409,4 +444,7 @@ details p { max-width: 680px; margin: -7px 30px 22px 0; color: var(--muted); fon
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .about-marquee-track { width: 100%; animation: none; }
+  .about-marquee-group { justify-content: center; width: 100%; flex-wrap: wrap; white-space: normal; }
+  .about-marquee-group[aria-hidden="true"] { display: none; }
 }
